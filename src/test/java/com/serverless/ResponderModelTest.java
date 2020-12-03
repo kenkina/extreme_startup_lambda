@@ -93,6 +93,18 @@ public class ResponderModelTest {
     }
 
     @Test
+    public void cuandoPreguntanCualEsElNumeroMayor1() {
+        // Arrange
+        String question = "31063280: which of the following numbers is the largest: 50, 7, 16, 169";
+
+        // Act
+        String response = responderModel.answer(question);
+
+        // Assert
+        assertThat(response).isEqualTo("169");
+    }
+
+    @Test
     public void cuandoPreguntanCualEsElNumeroMayor2() {
         // Arrange
         String question = "c3796c40: which of the following numbers is the largest: 596, 91";
@@ -102,6 +114,18 @@ public class ResponderModelTest {
 
         // Assert
         assertThat(response).isEqualTo("596");
+    }
+
+    @Test
+    public void cuandoPreguntanCualEsElNumeroMayor3() {
+        // Arrange
+        String question = "38cc38a0: which of the following numbers is the largest: 187, 8";
+
+        // Act
+        String response = responderModel.answer(question);
+
+        // Assert
+        assertThat(response).isEqualTo("187");
     }
 
 

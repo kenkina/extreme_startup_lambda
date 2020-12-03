@@ -22,6 +22,19 @@ public class ResponderModel {
             return teamName;
         }
 
+        Matcher numberMatcher1 = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+)").matcher(question);
+        if (numberMatcher1.matches()) {
+
+            int arr[] = {
+                    Integer.parseInt(numberMatcher1.group(1)),
+                    Integer.parseInt(numberMatcher1.group(2))
+            };
+
+            int max = Arrays.stream(arr).max().getAsInt();
+
+            return String.valueOf(max);
+        }
+
         Matcher numberMatcher = Pattern.compile(".*which of the following numbers is the largest: (\\d+), (\\d+), (\\d+), (\\d+)").matcher(question);
         if (numberMatcher.matches()) {
 
